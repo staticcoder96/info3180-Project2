@@ -1,0 +1,13 @@
+body {
+    padding-top: 50px;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+.pic{
+	float: left;
+	border: 1px solid black;
+	margin: 7px;
+	list-style: none;
+}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<h1 class="page-header">THUMBNAILS!!</h1>
+<script>
+var app = angular.module('myApp',[]);
+app.controller('thumbsnails', function($scope){
+    $http.get("/api/thumbnail").then(function(response){
+        $scope.urls = [ "https://i5.walmartimages.com/asr/6f72b560-cf7f-4efe-8ffc-2d4723fd6f02_1.03da0f6f9ab6313230c1009c91c5d05c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-ebd7/k2-_c26840ed-0ac3-478d-9173-398eaa1faef2.v1.png-735f1c435683f1593e165daeb4e59484247556ee-crushed-1x1.png", "https://i5.walmartimages.com/asr/6f72b560-cf7f-4efe-8ffc-2d4723fd6f02_1.03da0f6f9ab6313230c1009c91c5d05c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", "https://i5.walmartimages.com/asr/6f72b560-cf7f-4efe-8ffc-2d4723fd6f02_1.03da0f6f9ab6313230c1009c91c5d05c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", "https://ll-us-i5.wal.co/dfw/63fd9f59-d0f2/k2-_c379cb69-17f1-44da-89ba-53ea082853c5.v11.png-d4b66ddbfe95500ed27934e3f401aae8c3c30f74-crushed-70x65.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-a9e8/k2-_84280275-d251-461d-b29f-456506a3ec98.v11.png-56e11fae4af0df6777aaf267111aecad7f732698-crushed-70x65.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-e2f5/k2-_7feabc9d-72da-4dda-8af2-56bba05ab4ad.v11.png-08c9161116502a45df08cb62b05bb588b43ccfb7-crushed-70x65.png", "https://ll-us-i5.wal.co/dfw/63fd9f59-579f/k2-_e1ee901c-814c-4326-ab2d-4056d02e9d5b.v11.png-b8bd30a9336f729a293f34915f0a2ba4b028b6af-crushed-70x65.png" ];
+    });
+});
+</script>
+<p>{{urls}}</p>
+<div ng-app="myApp" ng-controller="thumbsnail">
+<div ng-repeat="x in urls track by $index">{{x}}</div>
+</div>
+{% endblock %}
+
+
