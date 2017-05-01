@@ -84,7 +84,6 @@ def login():
         if form.validate_on_submit():
             email = form.email.data
             passw = form.password.data
-            authenticate(email,passw)
             
         if form.email.data and form.password.data:
             user=db.session.query(Profile).filter_by(email=email, password=passw).first()
@@ -128,7 +127,7 @@ def wishhome(userid):
         db.session.add(wishl)
         db.session.commit()
         flash("ITEM SUCCESSFULLY ADDED")
-        wishno(userid,wishl.id) #call wishno()
+       # wishno(userid,wishl.id) #call wishno()
         #return redirect(url_for('wishhome',userid=userid,form=form))
         return redirect(url_for('thumbnail',url=url,form=form,wishid=wishl.id,sheet=sheet))
     else:
@@ -269,9 +268,9 @@ def logout():
     flash("Successfully Logged out")
     return redirect(url_for("home"))
     
-
+'''
 def authenticate(email,password):
-    """JWT Authentication Header"""
+    JWT Authentication Header
 
     #app.config['SECRET_KEY']='shh..itsasecret'
     secret='shh..itsasecret'
@@ -297,13 +296,12 @@ def authenticate(email,password):
     print 'Authorization: Bearer'  + HMACSHA256(
         base64UrlEncode(header) + "." + base64UrlEncode(payload) + "." + base64UrlEncode(signature))
     #return '%s' % current_identity
-    
    
-    
+    '''
     
 
 ##
-"""
+
 # The functions below should be applicable to all Flask apps.
 
 ###
