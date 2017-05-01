@@ -85,7 +85,6 @@ def login():
             email = form.email.data
             passw = form.password.data
             
-            authenticate(email,passw)
             
         if form.email.data and form.password.data:
             user=db.session.query(Profile).filter_by(email=email, password=passw).first()
@@ -163,7 +162,6 @@ def wishno(userid,itemid):
 
 @app.route("/api/users/<int:userid>/wishlist/share",methods=['GET','POST'])
 #@login_required
-
 def share_wishlist(userid):
     """Share the wishlist"""
     sheet=ShareForm()
@@ -222,7 +220,7 @@ def thumbnail(wishid):
        response=get_images(urlz.item_url)
        #response=jsonify(error='Null',thumbnails=get_images(urlz.item_url), message="Success")
        return render_template("thumbnails.html",res=response,too="tiger")
-   return render_template("thumbnails.html",res=response,too="tiger")
+    return render_template("thumbnails.html",res=response,too="tiger")
        
         
         
@@ -271,9 +269,9 @@ def logout():
     return redirect(url_for("home"))
     
 
-def authenticate(email,password):
-    """JWT Authentication Header
-    """
+"""def (email,password):
+    JWT Authentication Header
+
     #app.config['SECRET_KEY']='shh..itsasecret'
     secret='shh..itsasecret'
     #header
@@ -281,35 +279,38 @@ def authenticate(email,password):
         "alg":"HS256",
         "typ":"JWT"
         }
+    
         
     #payload
     payload = {
         "email":email,
         "password":password
     }
-    #HMACSHA256
-    
-    #signature = HMACSHA256(
-    #    base64UrlEncode(header) + "." + base64UrlEncode(payload),
-     #   secert
-     #   )
-   # 
-   # print 'Authorization: Bearer' + "<" + signature +"."+ result +">"
     
     
+    signature = HMACSHA256(
+        base64UrlEncode(header) + "." + base64UrlEncode(payload),
+        secert
+        )
+   
+    print 'Authorization: Bearer'  + HMACSHA256(
+        base64UrlEncode(header) + "." + base64UrlEncode(payload) + "." + base64UrlEncode(signature))
+    #return '%s' % current_identity
     
-##
+    just doing some testing ... ..still in progress..ok
+    
+    
 
+##
+"""
 # The functions below should be applicable to all Flask apps.
 
 ###
 
-
-
 @app.route('/<file_name>.txt')
 
 def send_text_file(file_name):
-
+    
     """Send your static text file."""
 
     file_dot_text = file_name + '.txt'

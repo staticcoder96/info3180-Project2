@@ -3,9 +3,8 @@ var app = angular.module('myApp',[]);
 
 app.controller('thumbsnails', function($scope,$http){
     
-    $http.post("/api/thumbnail").then(function(response){
-        console.log(data);
-        $scope.urls = response.data.thumbnails;
+    $http.post("/api/<int:wishid>/thumbnail").then(function(response){
+        $scope.urls = response.data;
         
     });
 });
