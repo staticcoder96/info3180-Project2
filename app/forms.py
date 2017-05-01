@@ -16,9 +16,10 @@ class SignUpForm(Form):
 class WishForm(Form):
     title = StringField('Title', validators=[Required()])
     description = TextAreaField('Description')
-    thumbnail = FileField('Custom Image')
-    url = StringField('Search For Image')
-    status = SelectField('Status',choices=[('0','Not Received'),('1','Received')])
+    url = StringField('Search For Image',validators=[Required()])
     submit = SubmitField('Add Wish')
+class ShareForm(Form):
+    email = StringField('Email', validators=[Required()])
+    submit = SubmitField('Share Wishlist')
 
     

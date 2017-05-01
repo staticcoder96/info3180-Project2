@@ -11,6 +11,7 @@ Flask-Migrate
 Flask-Login
 psycopg2
 validators
+Flask-JWT
 
 # ----------------------
 # Production Server
