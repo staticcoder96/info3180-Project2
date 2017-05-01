@@ -14,11 +14,11 @@
 <div></div>
 <span class='mimg'> 
 <img src="{{res[0]}}" style="width:300px;height:300px;" onclick="myFunction()"/>
-<img src="{{res[1]}}" style="width:300px;height:300px;"/>
-<img src="{{res[2]}}" style="width:300px;height:300px;"/><img src="{{res[3]}}" style="width:300px;height:300px;"/>
-<img src="{{res[4]}}" style="width:300px;height:300px;"/><img src="{{res[5]}}" style="width:300px;height:300px;"/>
-<img src="{{res[6]}}" style="width:300px;height:300px;"/>
-<img src="{{res[7]}}" style="width:300px;height:300px;"/><img src="{{res[8]}}" style="width:300px;height:300px;"/>
+<img src="{{res[1]}}" style="width:300px;height:300px;" onclick="myFunction1()"/>
+<img src="{{res[2]}}" style="width:300px;height:300px;" onclick="myFunction2()"/><img src="{{res[3]}}" style="width:300px;height:300px;" onclick="myFunction3()"/>
+<img src="{{res[4]}}" style="width:300px;height:300px;" onclick="myFunction4()"/><img src="{{res[5]}}" style="width:300px;height:300px;" onclick="myFunction5()"/>
+<img src="{{res[6]}}" style="width:300px;height:300px;" onclick="myFunction6()"/>
+<img src="{{res[7]}}" style="width:300px;height:300px;" onclick="myFunction7()"/><img src="{{res[8]}}" style="width:300px;height:300px;" onclick="myFunction8()"/>
 </span>
 </div>
 <script>
@@ -26,10 +26,43 @@ function myFunction() {
     var x = document.getElementsByTagName("IMG")[0].getAttribute("src"); 
     document.getElementsByTagName("input")[0].setAttribute("value",x);
 }
+function myFunction1() {
+    var x = document.getElementsByTagName("IMG")[1].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction2() {
+    var x = document.getElementsByTagName("IMG")[2].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction3() {
+    var x = document.getElementsByTagName("IMG")[3].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction4() {
+    var x = document.getElementsByTagName("IMG")[4].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction5() {
+    var x = document.getElementsByTagName("IMG")[5].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction6() {
+    var x = document.getElementsByTagName("IMG")[6].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction7() {
+    var x = document.getElementsByTagName("IMG")[7].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
+function myFunction8() {
+    var x = document.getElementsByTagName("IMG")[8].getAttribute("src"); 
+    document.getElementsByTagName("input")[0].setAttribute("value",x);
+}
 </script>
 
 <p>CLICK IMAGE TO ADD IN THIS BOX</p>
-<input type="text" name="thumbnail" label="thumbnail" value="PlaceHolder URL" style="width:200px"/>
+<input type="text" name="thumbnail" label="thumbnail" value="PlaceHolder URL" style="width:500px"/>
+<br/>
 <button type="submit" class="btn btn-primary"><a href=""></a>Submit IMAGE</button> 
 
 {% raw %}
