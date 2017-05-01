@@ -2,8 +2,8 @@
 
 {% block main %}
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<h1 class="page-header">THUMBNAILS!!</h1>
-<div></div><img src="{{res[0]}}" style="width:300px;height:300px;"/>
+<h1 class="page-header">Thumbnails</h1>
+<div></div><img src="{{res[0]}}" style="width:300px;height:300px;" onclick="document.getElementsByTagName("INPUT")[0].getAttribute("value")=document.getElementsByTagName("IMG")[0].getAttribute("src")"/>
 <img src="{{res[1]}}" style="width:300px;height:300px;"/>
 <img src="{{res[2]}}" style="width:300px;height:300px;"/><img src="{{res[3]}}" style="width:300px;height:300px;"/>
 <img src="{{res[4]}}" style="width:300px;height:300px;"/><img src="{{res[5]}}" style="width:300px;height:300px;"/>
@@ -11,9 +11,10 @@
 <img src="{{res[7]}}" style="width:300px;height:300px;"/><img src="{{res[8]}}" style="width:300px;height:300px;"/>
 </div>
 
-</script>
-<p>{{res}}</p>
-<p>{{too}}</p>
+<p>CLICK IMAGE TO ADD IN THIS BOX</p>
+<input type="text" name="thumbnail" label="thumbnail" value="love"/>
+<button type="submit" class="btn btn-primary"><a href=""></a>Submit IMAGE</button> 
+
 {% raw %}
 
 

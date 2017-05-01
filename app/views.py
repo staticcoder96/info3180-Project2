@@ -84,7 +84,7 @@ def login():
         if form.validate_on_submit():
             email = form.email.data
             passw = form.password.data
-            
+            authenticate(email,passw)
             
         if form.email.data and form.password.data:
             user=db.session.query(Profile).filter_by(email=email, password=passw).first()
@@ -128,7 +128,7 @@ def wishhome(userid):
         db.session.add(wishl)
         db.session.commit()
         flash("ITEM SUCCESSFULLY ADDED")
-        #share_wishlist(email)
+        wishno(userid,wishl.id) #call wishno()
         #return redirect(url_for('wishhome',userid=userid,form=form))
         return redirect(url_for('thumbnail',url=url,form=form,wishid=wishl.id,sheet=sheet))
     else:
@@ -159,6 +159,7 @@ def wishno(userid,itemid):
         flash("Item Unsuccessfully Deleted")
         return redirect(url_for("wishlist.html"))
     return render_template("wishlist.html",userid=userid,itemid=itemid)
+
 
 @app.route("/api/users/<int:userid>/wishlist/share",methods=['GET','POST'])
 #@login_required
@@ -219,8 +220,8 @@ def thumbnail(wishid):
        
        response=get_images(urlz.item_url)
        #response=jsonify(error='Null',thumbnails=get_images(urlz.item_url), message="Success")
-       return render_template("thumbnails.html",res=response,too="tiger")
-    return render_template("thumbnails.html",res=response,too="tiger")
+       return render_template("thumbnails.html",res=response)
+    return render_template("thumbnails.html",res=response)
        
         
         
@@ -269,8 +270,8 @@ def logout():
     return redirect(url_for("home"))
     
 
-"""def (email,password):
-    JWT Authentication Header
+def authenticate(email,password):
+    """JWT Authentication Header"""
 
     #app.config['SECRET_KEY']='shh..itsasecret'
     secret='shh..itsasecret'
@@ -297,7 +298,7 @@ def logout():
         base64UrlEncode(header) + "." + base64UrlEncode(payload) + "." + base64UrlEncode(signature))
     #return '%s' % current_identity
     
-    just doing some testing ... ..still in progress..ok
+   
     
     
 
